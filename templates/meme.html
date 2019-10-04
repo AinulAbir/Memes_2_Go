@@ -1,9 +1,8 @@
 {% extends "main_temp.html" %}
 {% block content %}
 
-
 {% for post in data %}
-            <div class = "meme">
+            <div style="background-color: #f7f6e3">
             <h3>{{ post.title }}</h3>
             <a href="{{post.link}}">
             {% if post.is_vid%}
@@ -11,12 +10,14 @@
                 <source src="{{post.source}}">
             </video>
             {% else: %}
-            <img width='75%' src="{{post.source}}">
+            <img width='99.5%' src="{{post.source}}">
             {% endif %}
             </a>
             </div>
             <br><br>
 {% endfor %}
+
+<a href="#top">Go to top</a> <br>
 
 {% if total > 2 %}
     {% for page in range(1,total) %}

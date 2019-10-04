@@ -1,46 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Memes 2 Go</title>
-    <style>
-  div {
-  border: .08px solid #FFFFFF;
-  padding: 12%;
-  font-size: 16px;
-  text-align: center;
-  background: white;
-  }
+<title>Memes 2 Go</title>
+    <link rel="icon" href="https://www.burns-360.com/wp-content/uploads/2018/09/Sample-Icon.png">
+
+<style>
+ul {
+    list-style-type: none;
+    padding: 0px;
+    overflow: hidden;
+    }
+li a {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    font: 20px;}
+li a:hover {
+    color: #ffcf40;}
+
+li {
+float: left;}
+li:hover ul {display: block;}
+
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ffcf40;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 27px;
+}
+
+.sidenav a {
+  padding: 4px 4px 4px 4px;
+  text-decoration: none;
+  font-size: 140%;
+  color: #111111;
+  display: block;
+  transition: 0.25s;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  font-size: 46px;
+  margin-left: 5px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 2px;}
+}
 </style>
 </head>
-<body style="background-color:#E8E8E8;">
-<header> <a href="/">All or Home</a>
-           <a href="/general">General <a/>
-           <a href="/spongebob">SpongeBob<a/>
-           <a href="/stat-wars"> Star Wars</a>
-           <a href="/cats">Cats<a/>
-           <a href="/dogs">Dogs<a/>
-           <a href="/anime">Anime<a/>
-           <a href="/history">History<a/>
-           <a href="/roses">Roses Are Red...<a/>
-           <a href="/Infomercial">Infomercial<a/>
-           <a href="/stock">Stock<a/>
-           <a href="/tweets">Tweets<a/>
-           <a href="/starter-packs">Starter Packs<a/>
-           <a href="/christian">Christian<a/>
-           <a href="/relateable">Relatable<a/>
-           <a href="/fellow-kids">FellowKids<a/>
-</header>
-   <table >
-       <td width="30%">
 
+<body style="background-color:#e5e3a7">
+
+             <table >
+                   <td width="30%" style="vertical-align: top">
+                        <ul>
+                <li>
+                    <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times</a>
+
+              <a href="/">All or Home</a>
+                        <a href="/general">General <a/>
+                        <a href="/spongebob">SpongeBob<a/>
+                        <a href="/star-wars"> Star Wars</a>
+                        <a href="/cats">Cats<a/>
+                        <a href="/dogs">Dogs<a/>
+                        <a href="/anime">Anime<a/>
+                        <a href="/history">History<a/>
+                        <a href="/roses">Roses Are Red...<a/>
+                        <a href="/infomercials">Infomercials<a/>
+                        <a href="/stock">Stock<a/>
+                        <a href="/tweets">Tweets<a/>
+                        <a href="/starter-packs">Starter Packs<a/>
+                        <a href="/christian">Christian<a/>
+                        <a href="/relateable">Relatable<a/>
+                        <a href="/fellow-kids">FellowKids<a/>
+            </div>
+
+
+            <span style="font-size:240%;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+            <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "18%";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+            </script>
+                </li>
+            </ul>
        </td>
 
     <td width="40%">
-{% block content %} {% endblock content %}
-<td width="30%"></td>
+        <center>
+        <a href="#"><img src="img/m2glogo.png"></a>
+        </center>
+        <center> {% block content %}
+            {% endblock content %} </center>
 
+     <td width="30%"></td>
    </table>
 
 </body>
+<footer>Powered By Reddit</footer>
 </html>
